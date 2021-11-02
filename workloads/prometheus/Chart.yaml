@@ -1,0 +1,11 @@
+---
+apiVersion: v2
+name: prometheus
+description: A Helm chart for deploying Prometheus and Grafana
+type: application
+version: 1.0.0
+appVersion: "1.0"
+dependencies:
+- name: prometheus-community
+  version: 14.16.0
+  repository: https://prometheus-community.github.io/helm-charts
