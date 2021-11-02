@@ -9,7 +9,7 @@ metadata:
   finalizers:
   - resources-finalizer.argocd.argoproj.io    
 spec:
-  project: workloads-project
+  project: default
   source:
     repoURL: https://github.com/kcoleman731/argo-add-ons
     targetRevision: HEAD
