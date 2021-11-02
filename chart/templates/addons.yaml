@@ -19,10 +19,9 @@ spec:
     helm:
       releaseName: observability     
       valueFiles:
-      - grafana-values.yaml   
-      - prometheus-values.yaml 
+      - values.yaml   
   destination:
-    server: {{ .Values.spec.destination.server }}
+    server: https://kubernetes.default.svc
     namespace: monitoring
   syncPolicy:
     automated:
