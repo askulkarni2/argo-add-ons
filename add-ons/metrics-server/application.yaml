@@ -1,18 +1,16 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: add-ons
+  name: metrics-server
   namespace: default
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
   project: default
   source:
-    repoURL: https://github.com/kcoleman731/argo-add-ons
-    targetRevision: HEAD
-    path: add-ons
-    directory:
-      recurse: true
+    chart: metrics-server
+    repoURL: https://kubernetes-sigs.github.io/metrics-server
+    targetRevision: 3.5.0
   destination:
     namespace: default
     server: https://kubernetes.default.svc
