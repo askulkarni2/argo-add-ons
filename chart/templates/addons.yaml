@@ -4,7 +4,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name:  
+  name:  tester
   namespace: argocd
   finalizers:
   - resources-finalizer.argocd.argoproj.io    
@@ -22,7 +22,7 @@ spec:
       - values.yaml   
   destination:
     server: https://kubernetes.default.svc
-    namespace: monitoring
+    namespace: default
   syncPolicy:
     automated:
       prune: true    
