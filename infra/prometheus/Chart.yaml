@@ -1,5 +1,5 @@
 apiVersion: v2
-name: promethes
+name: prometheus
 description: Helm Chart for installing prometheus
 type: application
 version: 1.0.0
