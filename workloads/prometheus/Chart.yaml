@@ -1,23 +1,38 @@
-apiVersion: argoproj.io/v1alpha1
-kind: Application
-metadata:
-  name: prometheus
-  namespace: default
-  finalizers:
-  - resources-finalizer.argocd.argoproj.io
-spec:
-  project: default
-  source:
-    chart: prometheus
-    repoURL: {{ .Values.spec.source.repoURL }}
-    targetRevision: 14.6.0
-    helm: 
-      valueFiles:
-      - values.yaml
-  destination:
-    namespace: default
-    server: https://kubernetes.default.svc
-  syncPolicy:
-    automated:
-      prune: true
-      selfHeal: true
+---
+apiVersion: v2
+name: observability-argocd
+description: A Helm chart for deploying Prometheus and Grafana
+type: application
+version: 2.0.0
+appVersion: "2.0"
+dependencies:
+- name: prometheus
+  version: 14.6.0
+  repository: https://prometheus-community.github.io/helm-charts
+- name: grafana
+  version: 6.16.0
+  repository: https://grafana.github.io/helm-charts
+  
+# apiVersion: argoproj.io/v1alpha1
+# kind: Application
+# metadata:
+#   name: prometheus
+#   namespace: default
+#   finalizers:
+#   - resources-finalizer.argocd.argoproj.io
+# spec:
+#   project: default
+#   source:
+#     chart: prometheus
+#     repoURL: {{ .Values.spec.source.repoURL }}
+#     targetRevision: 14.6.0
+#     helm: 
+#       valueFiles:
+#       - values.yaml
+#   destination:
+#     namespace: default
+#     server: https://kubernetes.default.svc
+#   syncPolicy:
+#     automated:
+#       prune: true
+#       selfHeal: true
