@@ -9,10 +9,8 @@ spec:
   project: default
   source:
     repoURL: https://github.com/kcoleman731/argo-add-ons
-    path: infra
+    path: infra/prometheus
     targetRevision: HEAD
-    directory:
-      recurse: true
   destination:
     server: https://kubernetes.default.svc
     namespace: default
