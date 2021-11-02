@@ -8,9 +8,10 @@ metadata:
 spec:
   project: default
   source:
-    chart: metrics-server
-    repoURL: https://kubernetes-sigs.github.io/metrics-server/
-    targetRevision: 3.5.0
+    repoURL: https://kubernetes-sigs.github.io/metrics-server
+    helm: 
+      releaseName: metrics-server
+      version: 3.5.0
   destination:
     namespace: argocd
     server: https://kubernetes.default.svc
