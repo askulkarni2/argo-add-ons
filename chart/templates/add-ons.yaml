@@ -11,6 +11,8 @@ spec:
     repoURL: https://github.com/kcoleman731/argo-add-ons
     targetRevision: HEAD
     path: add-ons
+    directory:
+      recurse: true
   destination:
     namespace: default
     server: https://kubernetes.default.svc
@@ -18,5 +20,3 @@ spec:
     automated:
       prune: true
       selfHeal: true
-  directory:
-    recurse: true
