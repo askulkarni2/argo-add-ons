@@ -12,27 +12,3 @@ dependencies:
 - name: grafana
   version: 6.16.0
   repository: https://grafana.github.io/helm-charts
-  
-# apiVersion: argoproj.io/v1alpha1
-# kind: Application
-# metadata:
-#   name: prometheus
-#   namespace: default
-#   finalizers:
-#   - resources-finalizer.argocd.argoproj.io
-# spec:
-#   project: default
-#   source:
-#     chart: prometheus
-#     repoURL: {{ .Values.spec.source.repoURL }}
-#     targetRevision: 14.6.0
-#     helm: 
-#       valueFiles:
-#       - values.yaml
-#   destination:
-#     namespace: default
-#     server: https://kubernetes.default.svc
-#   syncPolicy:
-#     automated:
-#       prune: true
-#       selfHeal: true
