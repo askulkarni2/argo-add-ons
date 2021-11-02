@@ -1,0 +1,6 @@
+apiVersion: v2
+name: aws-load-balancer-controller
+description: Helm Chart for installing AWS Load Balancer Controller
+type: application
+version: 1.0.0
+appVersion: 1.0.0

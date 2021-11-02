@@ -11,9 +11,6 @@ spec:
     chart: agones
     repoURL: https://agones.dev/chart/stable
     targetRevision: 1.15.0
-    helm: 
-      valueFiles:
-      - values.yaml
   destination:
     namespace: default
     server: https://kubernetes.default.svc
