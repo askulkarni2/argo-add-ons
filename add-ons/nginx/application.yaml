@@ -9,7 +9,7 @@ spec:
   project: default
   source:
     chart: ingress-nginx
-    repoURL: https://kubernetes-sigs.github.io/metrics-server
+    repoURL: https://kubernetes.github.io/ingress-nginx
     targetRevision: 3.33.0
   destination:
     namespace: default

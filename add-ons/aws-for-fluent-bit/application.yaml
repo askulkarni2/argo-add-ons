@@ -9,7 +9,7 @@ spec:
   project: default
   source:
     chart: aws-for-fluent-bit
-    repoURL: https://kubernetes-sigs.github.io/metrics-server
+    repoURL: https://aws.github.io/eks-charts
     targetRevision: 0.1.0
   destination:
     namespace: default

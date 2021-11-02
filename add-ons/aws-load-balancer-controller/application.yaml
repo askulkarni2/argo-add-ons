@@ -9,7 +9,7 @@ spec:
   project: default
   source:
     chart: aws-load-balancer-controller
-    repoURL: https://kubernetes-sigs.github.io/metrics-server
+    repoURL: https://aws.github.io/eks-charts
     targetRevision: 1.2.3
   destination:
     namespace: default
