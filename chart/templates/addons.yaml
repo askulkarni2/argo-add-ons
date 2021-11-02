@@ -1,26 +1,29 @@
+
+   
 ---
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: addons 
-  namespace: default
+  name:  
+  namespace: argocd
   finalizers:
   - resources-finalizer.argocd.argoproj.io    
 spec:
-  project: default
+  project: workloads-project
   source:
     repoURL: https://github.com/kcoleman731/argo-add-ons
     targetRevision: HEAD
     path: workloads
-    helm:
-      releaseName: prometheus     
-      valueFiles:
-      - values.yaml  
     directory:
       recurse: true
+    helm:
+      releaseName: observability     
+      valueFiles:
+      - grafana-values.yaml   
+      - prometheus-values.yaml 
   destination:
-    server: https://kubernetes.default.svc
-    namespace: default
+    server: {{ .Values.spec.destination.server }}
+    namespace: monitoring
   syncPolicy:
     automated:
       prune: true    
@@ -31,4 +34,4 @@ spec:
       backoff:
         duration: 5s 
         factor: 2 
-        maxDuration: 1m      
+        maxDuration: 1m    
