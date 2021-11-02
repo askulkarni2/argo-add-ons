@@ -13,9 +13,7 @@ spec:
   source:
     repoURL: https://github.com/kcoleman731/argo-add-ons
     targetRevision: HEAD
-    path: workloads
-    directory:
-      recurse: true
+    path: workloads/prometheus
     helm:
       releaseName: observability     
       valueFiles:
