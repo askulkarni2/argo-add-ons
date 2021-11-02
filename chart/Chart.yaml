@@ -3,3 +3,5 @@ appVersion: "1.0"
 name: applications
 description: App of apps chart for the dev EKS environment.
 version: 0.1.0
+
+
