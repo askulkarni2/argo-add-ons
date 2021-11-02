@@ -9,7 +9,7 @@ spec:
   project: default
   source:
     chart: prometheus
-    repoURL: https://prometheus-community.github.io/helm-charts
+    repoURL: {{ .Values.spec.source.repoURL }}
     targetRevision: 14.6.0
     helm: 
       valueFiles:
