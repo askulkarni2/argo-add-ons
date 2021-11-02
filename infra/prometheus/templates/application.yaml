@@ -8,9 +8,9 @@ metadata:
 spec:
   project: default
   source:
-    chart: prometheus-community
+    chart: prometheus
     repoURL: {{ .Values.spec.source.repoURL }}
-    targetRevision: 14.11.0
+    targetRevision: 14.6.0
     helm: 
       valueFiles:
       - values.yaml
