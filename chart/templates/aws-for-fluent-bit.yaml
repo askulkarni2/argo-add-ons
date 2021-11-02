@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: aws-for-fluent-bit 
+  name: aws-for-fluent-bit-root
   namespace: default
   finalizers:
   - resources-finalizer.argocd.argoproj.io    
