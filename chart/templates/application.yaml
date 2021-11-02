@@ -1,10 +1,7 @@
-
-   
----
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name:  tester
+  name: addons 
   namespace: default
   finalizers:
   - resources-finalizer.argocd.argoproj.io    
@@ -12,12 +9,10 @@ spec:
   project: default
   source:
     repoURL: https://github.com/kcoleman731/argo-add-ons
+    path: infra
     targetRevision: HEAD
-    path: workloads/prometheus
-    helm:
-      releaseName: observability     
-      valueFiles:
-      - values.yaml   
+    directory:
+      recurse: true
   destination:
     server: https://kubernetes.default.svc
     namespace: default
@@ -31,4 +26,4 @@ spec:
       backoff:
         duration: 5s 
         factor: 2 
-        maxDuration: 1m    
+        maxDuration: 1m  
