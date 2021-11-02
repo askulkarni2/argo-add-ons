@@ -12,6 +12,10 @@ spec:
     repoURL: https://github.com/kcoleman731/argo-add-ons
     targetRevision: HEAD
     path: workloads
+    helm:
+      releaseName: prometheus     
+      valueFiles:
+      - values.yaml  
     directory:
       recurse: true
   destination:
