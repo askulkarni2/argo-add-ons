@@ -1,0 +1,10 @@
+apiVersion: v2
+name: ssp-eks-addons-argocd
+description: A Helm chart demonstrating SSP ArgoCD AddOns management with GitOps 
+type: application
+version: 0.0.1
+
+dependencies:
+- name: prometheus
+  version: 0.0.1
+  repository: file://./dependencies/prometheus
