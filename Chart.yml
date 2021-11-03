@@ -8,4 +8,4 @@ dependencies:
 - name: prometheus
   condition: prometheus.enabled
   version: 0.0.1
-  repository: file://./dependencies/prometheus
+  repository: file:///dependencies/prometheus
