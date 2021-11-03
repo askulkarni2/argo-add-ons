@@ -1,5 +1,6 @@
-metadata:
-  name: prometheus
+prometheus:
+  metadata:
+    name: prometheus
 spec:
   source:
     repoURL: https://prometheus-community.github.io/helm-charts
