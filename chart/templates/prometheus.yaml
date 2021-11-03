@@ -12,6 +12,9 @@ spec:
     repoURL: https://github.com/kcoleman731/argo-add-ons
     path: infra/prometheus
     targetRevision: HEAD
+    helm: 
+      values: | 
+        {{ .Values }}
   destination:
     server: https://kubernetes.default.svc
     namespace: default
