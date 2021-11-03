@@ -16,7 +16,7 @@ spec:
       values: | 
         prometheus:
           metadata:
-            name: {{ .Values.prometheus.metadata.name}}
+            name: {{ .Values.prometheus.metadata.name }}
   destination:
     server: https://kubernetes.default.svc
     namespace: default
