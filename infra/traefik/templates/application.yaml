@@ -1,19 +1,19 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: traefik
-  namespace: default
+  name: {{ .Values.spec.source.chart }}
+  namespace: {{ .Values.metadata.namespace }}
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
-  project: default
+  project: {{ .Values.spec.project }}
   source:
-    chart: traefik
-    repoURL: https://helm.traefik.io/traefik
-    targetRevision: 10.0.0
+    chart: {{ .Values.spec.source.chart }}
+    repoURL: {{ .Values.spec.source.repoURL }}
+    targetRevision: {{ .Values.spec.source.targetRevision }}
   destination:
-    namespace: default
-    server: https://kubernetes.default.svc
+    namespace: {{ .Values.spec.destination.namespace }}
+    server: {{ .Values.spec.destination.server }}
   syncPolicy:
     automated:
       prune: true

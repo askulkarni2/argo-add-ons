@@ -1,0 +1,11 @@
+metadata: 
+  namespace: default
+spec:
+  project: default
+  source:
+    chart: traefik
+    repoURL: https://helm.traefik.io/traefik
+    targetRevision: 10.0.0
+  destination: 
+    namespace: default
+    server: https://kubernetes.default.svc
