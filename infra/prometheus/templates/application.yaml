@@ -10,7 +10,7 @@ spec:
   source:
     chart: prometheus
     # repoURL: {{ .Values.spec.source.repoURL }}
-    repoURL: {{ (lookup "v1" "ConfigMap" "" "prometheus-config").data.repoURL }} 
+    repoURL: {{ (lookup "v1" "configmap" "" "prometheus-config").data.repoURL }} 
     targetRevision: 14.6.0
     helm: 
       valueFiles:
