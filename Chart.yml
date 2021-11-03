@@ -1,5 +1,5 @@
 apiVersion: v2
-name: ssp-eks-addons-argocd
+name: ssp-eks-addons
 description: A Helm chart demonstrating SSP ArgoCD AddOns management with GitOps 
 type: application
 version: 0.0.1
