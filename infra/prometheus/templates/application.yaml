@@ -9,8 +9,11 @@ spec:
   project: default
   source:
     chart: prometheus
-    # repoURL: {{ .Values.spec.source.repoURL }}
+  {{- if (lookup "v1" "configmap" "" "prometheus-config") }}
     repoURL: {{ (lookup "v1" "configmap" "" "prometheus-config").data.repoURL }} 
+  {{ else }}
+    repoURL: {{ .Values.spec.source.repoURL }}
+  {{- end }}
     targetRevision: 14.6.0
     helm: 
       valueFiles:
