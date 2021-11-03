@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: {{ .Values.prometheus.metadata.name }}
+  name: prometheus
   namespace: default
   finalizers:
   - resources-finalizer.argocd.argoproj.io
